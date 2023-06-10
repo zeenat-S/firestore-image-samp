@@ -1,0 +1,20 @@
+<div class="container">
+    <input class="btn" type="file" accept="image/jpeg, image/jpg, image/png" (change)="onFileSelected($event)">
+    <button class="btn" (click)="onUpload()" [disabled]="!selectedImage">Upload</button>
+</div>
+
+<!-- <div class="container" *ngIf="imageUrl">
+    <img [src]="imageUrl" alt="Image">
+</div> -->
+
+<hr>
+
+<div class="container" >
+    <ul *ngFor="let image of images">
+        <li (click)="onClick(image.downloadUrl)">{{image.downloadUrl}}</li>
+    </ul>
+</div>
+
+<div class="container" *ngIf="displayImage" width="50px">
+    <img class="image-container" [src]="displayImage" alt="displayImage">
+</div>
